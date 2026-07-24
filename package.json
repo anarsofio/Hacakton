@@ -6,6 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
+    "host": "npm run build && next start -H 0.0.0.0 -p 3000",
+    "host:dev": "next dev -H 0.0.0.0 -p 3000",
+    "tunnel": "node scripts/tunnel.mjs",
+    "public": "concurrently -k -n next,tunnel -c cyan,magenta \"npm run host:dev\" \"npm run tunnel\"",
+    "public:prod": "npm run build && concurrently -k -n next,tunnel -c cyan,magenta \"next start -H 0.0.0.0 -p 3000\" \"npm run tunnel\"",
     "lint": "eslint"
   },
   "dependencies": {
@@ -19,7 +24,9 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@ngrok/ngrok": "^1.4.1",
     "@tailwindcss/postcss": "^4",
+    "concurrently": "^9.2.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
