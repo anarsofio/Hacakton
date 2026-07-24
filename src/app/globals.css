@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+:root {
+  --cf-navy: #0f1b2d;
+  --cf-navy-light: #16263d;
+  --cf-navy-soft: #1e3049;
+  --cf-gold: #c9974a;
+  --cf-gold-light: #e0b877;
+  --cf-cream: #f5efe6;
+  --cf-cream-dim: #ece3d4;
+  --cf-ink: #1b2430;
+  --cf-muted: #6b6357;
+  --cf-line: #ddd2bf;
+  --cf-green: #5b8a63;
+  --cf-yellow: #d1a441;
+  --cf-orange: #c97a3f;
+  --cf-red: #b5533f;
+}
+
+@theme inline {
+  --color-navy: var(--cf-navy);
+  --color-navy-light: var(--cf-navy-light);
+  --color-navy-soft: var(--cf-navy-soft);
+  --color-gold: var(--cf-gold);
+  --color-gold-light: var(--cf-gold-light);
+  --color-cream: var(--cf-cream);
+  --color-cream-dim: var(--cf-cream-dim);
+  --color-ink: var(--cf-ink);
+  --color-muted: var(--cf-muted);
+  --color-line: var(--cf-line);
+  --font-serif: "Fraunces", Georgia, serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--cf-cream);
+  color: var(--cf-ink);
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-serif-display {
+  font-family: "Fraunces", Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+.paper-bg {
+  background-color: var(--cf-cream);
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(15, 27, 45, 0.035) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+::selection {
+  background: var(--cf-gold);
+  color: var(--cf-navy);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cf-gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
