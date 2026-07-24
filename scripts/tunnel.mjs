@@ -33,11 +33,12 @@ function getNgrokAuthtoken() {
   return null;
 }
 
-const PORT = Number(process.env.PORT ?? 3000);
-const token = getNgrokAuthtoken();
+async function main() {
+  const PORT = Number(process.env.PORT ?? 3000);
+  const token = getNgrokAuthtoken();
 
-if (!token) {
-  console.error(`
+  if (!token) {
+    console.error(`
 Missing NGROK authtoken.
 
 Either add NGROK_AUTHTOKEN to .env.local, or run once:
@@ -45,13 +46,12 @@ Either add NGROK_AUTHTOKEN to .env.local, or run once:
 
 Get a free token: https://dashboard.ngrok.com/get-started/your-authtoken
 `);
-  process.exit(1);
-}
+    process.exit(1);
+  }
 
-console.log(`Waiting for Next.js on port ${PORT}…`);
-await new Promise((r) => setTimeout(r, 4000));
+  console.log(`Waiting for Next.js on port ${PORT}…`);
+  await new Promise((r) => setTimeout(r, 4000));
 
-try {
   const listener = await ngrok.forward({ addr: PORT, authtoken: token });
   const url = listener.url();
   console.log(`
@@ -64,9 +64,11 @@ try {
 ║  Press Ctrl+C to stop.
 ╚══════════════════════════════════════════════════╝
 `);
-  // Keep process alive until Ctrl+C
-  process.stdin.resume();
-} catch (err) {
+
+  await new Promise(() => {});
+}
+
+main().catch((err) => {
   console.error("ngrok failed to start:", err?.message ?? err);
   process.exit(1);
-}
+});
