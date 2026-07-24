@@ -65,7 +65,7 @@ Get a free token: https://dashboard.ngrok.com/get-started/your-authtoken
 ╚══════════════════════════════════════════════════╝
 `);
 
-  await new Promise(() => {});
+  setInterval(() => {}, 60_000);
 }
 
 main().catch((err) => {
