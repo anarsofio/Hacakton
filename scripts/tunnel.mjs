@@ -64,10 +64,9 @@ try {
 ║  Press Ctrl+C to stop.
 ╚══════════════════════════════════════════════════╝
 `);
+  // Keep process alive until Ctrl+C
+  process.stdin.resume();
 } catch (err) {
   console.error("ngrok failed to start:", err?.message ?? err);
   process.exit(1);
 }
-
-// Keep process alive
-await new Promise(() => {});
