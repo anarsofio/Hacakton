@@ -9,8 +9,8 @@ export default function NegotiationLetterPage() {
       <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-10">
         <PageHeading
           eyebrow="Stage 7 · Output"
-          title="Negotiation Letter"
-          description="AI-drafted demand letter pulling from every prior stage. Edit freely before exporting."
+          title="Settlement Demand Letter"
+          description="Demand letter pulling from every prior stage. Add custom notes and regenerate before exporting."
         />
         <NegotiationLetterClient />
       </main>

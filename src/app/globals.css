@@ -11,6 +11,9 @@
   --cf-ink: #1b2430;
   --cf-muted: #6b6357;
   --cf-line: #ddd2bf;
+  --cf-accent: #b5e550;
+  --cf-warning: #e9d700;
+  --cf-critical: #a70000;
   --cf-green: #5b8a63;
   --cf-yellow: #d1a441;
   --cf-orange: #c97a3f;
@@ -28,6 +31,9 @@
   --color-ink: var(--cf-ink);
   --color-muted: var(--cf-muted);
   --color-line: var(--cf-line);
+  --color-accent: var(--cf-accent);
+  --color-warning: var(--cf-warning);
+  --color-critical: var(--cf-critical);
   --font-serif: "Fraunces", Georgia, serif;
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
 }
@@ -59,12 +65,12 @@ body {
 }
 
 ::selection {
-  background: var(--cf-gold);
+  background: var(--cf-accent);
   color: var(--cf-navy);
 }
 
 :focus-visible {
-  outline: 2px solid var(--cf-gold);
+  outline: 2px solid var(--cf-accent);
   outline-offset: 2px;
 }
 

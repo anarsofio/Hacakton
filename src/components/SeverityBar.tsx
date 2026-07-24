@@ -11,7 +11,7 @@ export default function SeverityBar({ value, label }: { value: number; label: st
           style={{
             width: "100%",
             background:
-              "linear-gradient(to right, var(--cf-green), var(--cf-yellow), var(--cf-orange), var(--cf-red))",
+              "linear-gradient(to right, var(--cf-accent), var(--cf-warning), var(--cf-critical))",
           }}
         />
         <div

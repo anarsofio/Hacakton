@@ -7,7 +7,7 @@ export function Card({
 }) {
   return (
     <div
-      className={`rounded-2xl border border-line/70 bg-white/70 shadow-[0_1px_2px_rgba(15,27,45,0.04),0_8px_24px_-16px_rgba(15,27,45,0.25)] ${className}`}
+      className={`rounded-2xl border border-line/60 bg-white/60 shadow-[0_1px_2px_rgba(15,27,45,0.04),0_8px_32px_-16px_rgba(15,27,45,0.2)] backdrop-blur-md transition ${className}`}
     >
       {children}
     </div>
@@ -25,7 +25,7 @@ export function PageHeading({
 }) {
   return (
     <div className="mb-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-gold">{eyebrow}</p>
+      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-accent">{eyebrow}</p>
       <h1 className="mt-1 font-serif-display text-3xl font-semibold text-navy sm:text-[2.1rem]">
         {title}
       </h1>

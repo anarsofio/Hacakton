@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
-import { Card, PageHeading, SourceViewer, KeyPointsList } from "@/components/PageShell";
-import AIBadge from "@/components/AIBadge";
-import { policeReport } from "@/lib/mockData";
+import { PageHeading } from "@/components/PageShell";
+import PoliceReportClient from "@/components/PoliceReportClient";
 
 export default function PoliceReportPage() {
   return (
@@ -11,32 +10,9 @@ export default function PoliceReportPage() {
         <PageHeading
           eyebrow="Stage 2 · Incident"
           title="Police Report"
-          description="AI-extracted facts from the responding officer's incident report, shown alongside the original document for verification."
+          description="Extracted facts from the responding officer's incident report, shown alongside photographic evidence and the original document."
         />
-
-        <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
-          <div className="flex flex-col gap-6">
-            <Card className="p-6">
-              <div className="mb-3 flex items-center justify-between">
-                <h2 className="font-serif-display text-lg font-semibold text-navy">AI Summary</h2>
-                <AIBadge />
-              </div>
-              <p className="text-[15px] leading-relaxed text-navy/80">{policeReport.summary}</p>
-            </Card>
-
-            <Card className="p-6">
-              <div className="mb-2 flex items-center justify-between">
-                <h2 className="font-serif-display text-lg font-semibold text-navy">Key Points</h2>
-                <AIBadge />
-              </div>
-              <KeyPointsList points={policeReport.keyPoints} />
-            </Card>
-          </div>
-
-          <div className="lg:sticky lg:top-24 lg:h-fit">
-            <SourceViewer filename={policeReport.sourceDocument} />
-          </div>
-        </div>
+        <PoliceReportClient />
       </main>
     </div>
   );

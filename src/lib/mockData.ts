@@ -132,6 +132,13 @@ export const documents = [
 export const policeReport = {
   summary:
     "On March 11, 2025, the client's vehicle was struck from behind while stopped at a red light at the intersection of 5th Ave and Miller St. The responding officer's report cites the other driver for following too closely and issues a traffic citation. No citations were issued to the client. Officer notes describe visible rear bumper damage and the other driver's admission of distraction at the scene.",
+  vehicleSpeed: "35 mph at impact (estimated, other vehicle)",
+  fullReportUrl: "https://drive.google.com/file/d/example/view",
+  photos: [
+    { id: "p1", caption: "Rear bumper damage — client vehicle", hue: 0 },
+    { id: "p2", caption: "Accident scene — intersection overview", hue: 40 },
+    { id: "p3", caption: "Other driver vehicle — front end", hue: 80 },
+  ],
   keyPoints: [
     { label: "Date", value: "March 11, 2025, 5:42 PM" },
     { label: "Location", value: "5th Ave & Miller St., Springfield" },
@@ -283,6 +290,110 @@ export const qualityOfLifeSections = [
     title: "Additional Context",
     questions: [
       { q: "Is there anything else you'd like your attorney to know?", a: "I'm most worried about whether the back pain will come back if I go back to my normal activity level — my PT said it might flare up under stress on the spine." },
+    ],
+  },
+  {
+    id: "hobbies",
+    title: "CATEGORY 6: Hobbies and Leisure Activities (Loss of Enjoyment of Life)",
+    context:
+      "Defense objective is to show the plaintiff still enjoys life to minimize non-economic damages.",
+    questions: [
+      {
+        q: "What specific hobbies, sports, or leisure activities did you regularly participate in before the accident in December 2024?",
+        a: "",
+      },
+      {
+        q: "Which of those activities have you attempted to return to or try again since the accident occurred?",
+        a: "",
+      },
+      {
+        q: "If your left shoulder completely prevents you from doing [hobby/sport], why haven't you switched to an alternative activity that does not require use of that arm?",
+        a: "",
+      },
+      {
+        q: "Have you canceled any vacations, family trips, or major social events specifically because of your shoulder pain? Do you have written proof of those cancellations or lost deposits?",
+        a: "",
+      },
+    ],
+  },
+  {
+    id: "social-media",
+    title: "CATEGORY 7: Social Media Monitoring and Surveillance",
+    context:
+      "Defense attorneys routinely scrape social media to find contradicting photos or videos.",
+    questions: [
+      {
+        q: "You posted a photo on your social media account on [Date] where you are smiling and attending a family gathering. Were you in severe, agonizing pain on the day that photo was taken?",
+        a: "",
+      },
+      {
+        q: "If your left arm was so weak that you could not even open an aluminum can in December, how do you explain this photo from January where you are holding an item/child with that specific arm?",
+        a: "",
+      },
+      {
+        q: "Have you asked any friends or family members to avoid tagging you in photos or to delete posts since this accident happened? If so, why?",
+        a: "",
+      },
+    ],
+  },
+  {
+    id: "daily-routine",
+    title: "CATEGORY 8: Daily Routine and Personal Independence",
+    context:
+      "Defense attempts to prove total independence in basic self-care to argue suffering is minimal.",
+    questions: [
+      {
+        q: "Are you currently able to get dressed, bathe yourself, groom your hair, and cut your food without any physical assistance?",
+        a: "",
+      },
+      {
+        q: "Who cleans your house, does the grocery shopping, or takes care of yard work since the accident? Do you assist or participate in those chores in any capacity?",
+        a: "",
+      },
+      {
+        q: "If you drive a personal vehicle to go to doctor appointments or the store, how are you able to safely turn the steering wheel if your left driving shoulder is completely incapacitated?",
+        a: "",
+      },
+    ],
+  },
+  {
+    id: "psychological",
+    title: "CATEGORY 9: Psychological Impact and Family Relationships",
+    context:
+      "Defense attempts to frame psychological symptoms as standard stress from pre-existing issues or financial pressure.",
+    questions: [
+      {
+        q: "You claim this accident caused mental stress and anxiety. Have you ever seen a psychologist, psychiatrist, or counselor for mental health reasons at any point prior to December 2024?",
+        a: "",
+      },
+      {
+        q: "Are you taking any mental health medications? If so, were they prescribed due to trauma from the crash, or due to the stress of being out of work and facing financial hardship?",
+        a: "",
+      },
+      {
+        q: "How exactly has this injury changed your relationship with your spouse or children? Give me concrete examples of things you used to do with them that you can no longer do.",
+        a: "",
+      },
+    ],
+  },
+  {
+    id: "sleep-pain",
+    title: "CATEGORY 10: Sleep Disruptions and Pain Management Consistency",
+    context:
+      "Defense looks for mismatches between high self-reported pain ratings and actual medication adherence.",
+    questions: [
+      {
+        q: "You testified that your left shoulder pain routinely disrupts your sleep. On average, how many hours of uninterrupted sleep do you get per night right now?",
+        a: "",
+      },
+      {
+        q: "If the pain is as unbearable as you describe, why are there gaps of several weeks in your pharmacy records where you did not refill your pain prescriptions?",
+        a: "",
+      },
+      {
+        q: "Do you take your prescription pain medications every single day, or do you only take them on days when you overexert yourself?",
+        a: "",
+      },
     ],
   },
 ];
